@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
 
         // The old findViewById technique
         val rollButton: Button = findViewById(R.id.roll_button)
-        rollButton.text = ("Roll The Dice")
+        rollButton.setText("Roll The Dice")
 
     }
 }
