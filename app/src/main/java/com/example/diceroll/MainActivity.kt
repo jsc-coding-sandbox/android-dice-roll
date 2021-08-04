@@ -3,7 +3,8 @@ package com.example.diceroll
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.Toast
+import android.widget.TextView
+import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,8 +14,14 @@ class MainActivity : AppCompatActivity() {
         // The old findViewById technique
         val rollButton: Button = findViewById(R.id.roll_button)
         rollButton.setOnClickListener {
-            Toast.makeText(this, "I am toast", Toast.LENGTH_SHORT).show()
+            rollDice()
         }
 
+    }
+
+    private fun rollDice() {
+        val randInt = Random.nextInt(6)+1
+        val resultText: TextView = findViewById(R.id.result_text)
+        resultText.setText(randInt.toString())
     }
 }
